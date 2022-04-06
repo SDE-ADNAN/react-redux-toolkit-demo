@@ -18,7 +18,7 @@ export function Counter() {
                 <span>{count}</span>
                 <button
                 aria-label="Decrement value"
-                nClick={()=>dispatch(decrement())}
+                onClick={()=>dispatch(decrement())}
                 >
                     Decrement
                 </button>
