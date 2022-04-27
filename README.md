@@ -3,12 +3,14 @@
 # 1.) install the redux/toolkit package by running this command:
     (((( npm install @reduxjs/toolkit  ))))
 
-
+#
+#
 # 2.) install the react-redux package by running this command:
  <!-- can run only this command for installing redux toolkit and also react-redux at once -->
     (((( npm install @reduxjs/toolkit react-redux ))))
 
-
+#
+#
 # 3.) Create a Redux Store​
 Create a file named src/app/store.js. Import the configureStore API from Redux Toolkit. We'll start by creating an empty Redux store, and exporting it:
 
@@ -17,6 +19,9 @@ import { configureStore } from '@reduxjs/toolkit'
 export const store = configureStore({
   reducer: {},
 })
+
+#
+#
 
 # 4.) Provide the Redux Store to react
 Once the store is created , we can make it available to our react components by putting a React-Redux <Provider> around our 
@@ -38,6 +43,8 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
+#
+#
 # 5.) Create a redux State slice 
 
 Add a new file named src/features/counter/counterSlice.js
@@ -79,6 +86,9 @@ export const counterSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = counterSlice.actions
 
 export default counterSlice.reducer
+    
+#
+#
 
 # 6.) Add Slice Reducers to the Store​
 Next, we need to import the reducer function from the counter slice and add it to our store. By defining a field inside the reducer parameter, we tell the store to use this slice reducer function to handle all updates to that state.
@@ -93,6 +103,9 @@ export const store = configureStore({
   },
 })
 
+    
+#
+#
 # 7.) Use Redux State and Actions in React Components​
 Now we can use the React-Redux hooks to let React components interact with the Redux store. We can read data from the store with useSelector, and dispatch actions using useDispatch. Create a src/features/counter/Counter.js file with a <Counter> component inside, then import that component into App.js and render it inside of <App>.
 
